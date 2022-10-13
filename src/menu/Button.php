@@ -21,6 +21,7 @@ class Button implements \JsonSerializable{
 	}
 
 	/** @phpstan-return array<string, mixed> */
+	#[\ReturnTypeWillChange]
 	public function jsonSerialize() : array{
 		$ret = ["text" => $this->text];
 		if($this->image !== null){

@@ -16,6 +16,7 @@ class Image implements \JsonSerializable{
 	public static function path(string $data) : self{ return new self($data, "path"); }
 
 	/** @phpstan-return array<string, mixed> */
+	#[\ReturnTypeWillChange]
 	public function jsonSerialize() : array{
 		return [
 			"type" => $this->type,

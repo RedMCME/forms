@@ -22,6 +22,7 @@ abstract class BaseElement implements \JsonSerializable{
 	abstract protected function serializeElementData() : array;
 
 	/** @phpstan-return array<string, mixed> */
+	#[\ReturnTypeWillChange]
 	final public function jsonSerialize() : array{
 		$ret = $this->serializeElementData();
 		$ret["type"] = $this->getType();

@@ -18,6 +18,7 @@ abstract class BaseForm implements Form{
 	abstract protected function serializeFormData() : array;
 
 	/** @phpstan-return array<string, mixed> */
+	#[\ReturnTypeWillChange]
 	final public function jsonSerialize() : array{
 		$ret = $this->serializeFormData();
 		$ret["type"] = $this->getType();
